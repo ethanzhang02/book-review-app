@@ -1,0 +1,17 @@
+body {
+	background-color: #83B692;
+	font-family: Georgia
+}
+.bold {
+	font-weight: bold
+}
+.clickable {
+	text-decoration: underline;
+	color: #4b4949;
+}
+.clickable:hover {
+	cursor: pointer;
+}
+img {
+	margin-bottom: 10px;
+}

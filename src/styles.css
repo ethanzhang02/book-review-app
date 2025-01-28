@@ -1,0 +1,29 @@
+.btn-primary {
+    background-color: #C3ACCE; /* Custom background color */
+    border-color: black; /* Custom border color */
+}
+.btn-danger {
+    background-color: #89909F;
+    border-color: black
+}
+
+.equal-height-columns .book-img-top {
+    object-fit: cover;
+    height: 100%;
+  }
+  body {
+      background-color: #DFD9E2;
+      font-family: Georgia
+  }
+  .book-entry {
+      font-weight: bold;
+  }
+  .book-entry:hover {
+    cursor: pointer;
+  }
+  .book-img:hover {
+      cursor: pointer;
+  }
+  .test {
+      color: #4b4949;
+  }
