@@ -1,0 +1,18 @@
+body {
+	background-color: #83B692;
+	font-family: Georgia
+}
+.book-img-top {
+  /* object-fit: cover; */
+  height: 20px;
+}
+.line {
+	border-bottom: 1px solid;
+}
+.highlight {
+	background-color: #F9ADA0;
+	font-weight: bold;
+}
+.book-entry:hover {
+  cursor: pointer;
+}
