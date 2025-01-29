@@ -22,16 +22,19 @@ const AddBook = () => {
     <div>
       {/* Pass the handler to BookForm */}
 	  <br/>
+    {/* Conditional rendering based on whether a book was added
+    {newBookId && (
+        <div>
+          <p><span>Book added successfully! Click the link below to view the book: </span>
+            <Button onClick={handleSeeBook}>See it here!</Button>
+          </p>
+          
+        </div>
+      )} */}
+      
       <BookForm onBookAdded={handleBookAdded} />
 
-      {/* Conditional rendering based on whether a book was added */}
-      {newBookId && (
-        <div>
-		  <br/>
-          <p>Book added successfully! Click the link below to view the book:</p>
-          <Button onClick={handleSeeBook}>See it here!</Button>
-        </div>
-      )}
+      
     </div>
   );
 };

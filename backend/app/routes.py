@@ -1,17 +1,20 @@
 from flask import Blueprint, jsonify, request
 from .models import Book
 from . import db
+from . import cache
 
 main = Blueprint('main', __name__)
 
 # ROUTES 
 @main.route('/api/home', methods=['GET'])
+@cache.cached(timeout=5)
 def home_page():
     popular_books = Book.query.order_by(Book.rating.desc()).limit(3).all()
     print(popular_books)
     return jsonify([book.to_dict() for book in popular_books])
 
 @main.route('/api/books/<id>', methods=['GET'])
+@cache.cached(timeout=5)
 def view_book(id):
     book = Book.query.get_or_404(id)
     return jsonify(book.to_dict())
@@ -61,6 +64,8 @@ def delete(id):
     book = Book.query.get_or_404(id)
     db.session.delete(book)
     db.session.commit()
+    cache.delete(f"flask_cache_view//api/books/{id}")
+    cache.delete(f"flask_cache_view//api/home")
     return jsonify({"message": "Book deleted successfully", "book_id": id})
 
 @main.route('/api/books/<id>', methods=['PUT'])
@@ -87,5 +92,9 @@ def edit_book(id):
     book.genres = genres
 
     db.session.commit()
+    print(f"flask_cache_view//api/books/{id}")
+    cache.delete(f"flask_cache_view//api/books/{id}")
+    cache.delete(f"/api/books/{id}")
+    cache.delete(f"flask_cache_view//api/home")
     
     return jsonify(book.to_dict())

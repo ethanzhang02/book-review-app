@@ -139,10 +139,9 @@ const BookForm = ({ bookId, onBookAdded }) => { // Access bookId from props
 		if (bookId) {
 			navigate(`/view/${bookId}`);  // Navigate to home or list page
 		} else {
-			console.log(response.data)
-			console.log(response.data.newBookId)
-			onBookAdded(response.data.newBookId)
-			resetForm()
+      navigate(`/view/${response.data.newBookId}`)
+			// onBookAdded(response.data.newBookId)
+			// resetForm()
 		}
         
       })
