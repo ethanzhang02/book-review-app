@@ -16,7 +16,7 @@ const SearchResults = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		axios.get(`http://127.0.0.1:5000/api/search_results/${query}`)
+		axios.get(`https://book-review-app-e019.onrender.com/api/search_results/${query}`)
 		.then((response) => {
 			const {book_results, author_results, genre_results} = response.data
 			setBookResults(book_results)
