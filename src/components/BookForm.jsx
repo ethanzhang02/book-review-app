@@ -29,7 +29,7 @@ const BookForm = ({ bookId, onBookAdded }) => { // Access bookId from props
   // Fetch book details if bookId is provided
   useEffect(() => {
     if (bookId) {
-      axios.get(`http://127.0.0.1:5000/api/books/${bookId}`)
+      axios.get(`https://book-review-app-e019.onrender.com/api/books/${bookId}`)
         .then((response) => {
           setBook(response.data);
           setLoading(false);
@@ -130,8 +130,8 @@ const BookForm = ({ bookId, onBookAdded }) => { // Access bookId from props
     };
 
     const request = bookId
-      ? axios.put(`http://127.0.0.1:5000/api/books/${bookId}`, updatedBook)
-      : axios.post('http://127.0.0.1:5000/api/books', updatedBook); // POST for new book
+      ? axios.put(`https://book-review-app-e019.onrender.com/api/books/${bookId}`, updatedBook)
+      : axios.post('https://book-review-app-e019.onrender.com/api/books', updatedBook); // POST for new book
 
     request
       .then((response) => {

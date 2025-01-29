@@ -8,7 +8,7 @@ const HomePage = () => {
 
     // Fetch popular books from the Flask API
     useEffect(() => {
-        axios.get('http://127.0.0.1:5000/api/home')  // API endpoint to get popular books
+        axios.get('https://book-review-app-e019.onrender.com/api/home')  // API endpoint to get popular books
             .then((response) => {
                 setPopularBooks(response.data);  // Set the fetched data to state
             })

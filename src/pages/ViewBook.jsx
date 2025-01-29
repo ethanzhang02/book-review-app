@@ -14,7 +14,7 @@ const ViewBook = () => {
 
   // Fetch the book details from the Flask API
   useEffect(() => {
-    axios.get(`http://127.0.0.1:5000/api/books/${bookId}`)  // API endpoint to get a single book
+    axios.get(`https://book-review-app-e019.onrender.com/api/books/${bookId}`)  // API endpoint to get a single book
       .then((response) => {
         setBook(response.data);  // Set the fetched data to state
         setLoading(false);  // Stop the loading state
@@ -32,7 +32,7 @@ const ViewBook = () => {
 
   const handleDelete = () => {
 	  if(confirm("Are you sure you want to delete this book?")) {
-	  	axios.delete(`http://127.0.0.1:5000/api/books/${bookId}`)
+	  	axios.delete(`https://book-review-app-e019.onrender.com/api/books/${bookId}`)
 	  	 .then((response) => {
 	  		alert(response.data.message)
 	  		navigate('/');
