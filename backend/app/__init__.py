@@ -4,8 +4,8 @@ from flask_cors import CORS
 from flask_caching import Cache
 
 db = SQLAlchemy()
-# cache = Cache(config={'CACHE_TYPE': 'RedisCache', 'CACHE_REDIS_URL': 'redis://localhost:6379/0'})  # Redis backend
-cache = Cache(config={'CACHE_TYPE': 'SimpleCache'})
+cache = Cache(config={'CACHE_TYPE': 'RedisCache', 'CACHE_REDIS_URL': 'redis://localhost:6379/0'})  # Redis backend
+# cache = Cache(config={'CACHE_TYPE': 'SimpleCache'})
 
 
 def create_app():
